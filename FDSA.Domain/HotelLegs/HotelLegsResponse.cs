@@ -1,6 +1,4 @@
-﻿using FDSA.Domain;
-
-namespace FDSA.Domain.HotelLegs
+﻿namespace FDSA.Domain.HotelLegs
 {
     public class HotelLegsResponse
     {
