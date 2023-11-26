@@ -9,15 +9,23 @@ namespace FDSA.Infraestructure
 {
     public class HubService : IHubService
     {
+        #region PRIVATE VARIABLES
         private readonly IHotelLegsService _hotelLegsService;
         private readonly IServiceProvider _serviceProvider;
+        #endregion
 
-        public HubService(IHotelLegsService hotelLegsService, IServiceProvider serviceProvider)
+        #region CONSTRUCTORS
+        public HubService(
+            IHotelLegsService hotelLegsService,
+            IServiceProvider serviceProvider
+        )
         {
             _hotelLegsService = hotelLegsService;
             _serviceProvider = serviceProvider;
         }
+        #endregion
 
+        #region PUBLIC FUNCTIONS
         /// <summary>
         /// Function to send data from HUB to all providers
         /// </summary>
@@ -43,5 +51,6 @@ namespace FDSA.Infraestructure
 
             return result;
         }
+        #endregion
     }
 }

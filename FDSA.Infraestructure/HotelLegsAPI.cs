@@ -7,6 +7,12 @@ namespace FDSA.Infraestructure
 {
     public class HotelLegsAPI : IHotelLegsAPI
     {
+        #region PUBLIC FUNCTIONS
+        /// <summary>
+        /// Function to send the request to Wthe WebService HotelLegs
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<HotelLegsResponse> SendAsync(HotelLegsRequest request)
         {
             try
@@ -37,5 +43,6 @@ namespace FDSA.Infraestructure
                 throw;
             }
         }
+        #endregion
     }
 }

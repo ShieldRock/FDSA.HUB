@@ -8,9 +8,12 @@ namespace FDSA.Infraestructure.WebServices
 {
     public class HotelLegsService : IHotelLegsService
     {
+        #region PRIVATE VARIABLES
         private readonly ILogger<HotelLegsService> _logger;
         private readonly IHotelLegsAPI _hotelApi;
+        #endregion
 
+        #region CONSTRUCTORS
         public HotelLegsService(
             ILogger<HotelLegsService> logger,
             IHotelLegsAPI hotelApi
@@ -19,13 +22,22 @@ namespace FDSA.Infraestructure.WebServices
             _logger = logger;
             _hotelApi = hotelApi;
         }
+        #endregion
 
+        #region PUBLIC FUNCTIONS
+        /// <summary>
+        /// Function to send data to the WebService
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<HubResponse> SearchDataAsync(HubRequest request)
         {
             var data = await _hotelApi.SendAsync(GetRequest(request));
             return GetResponse(data);
         }
+        #endregion
 
+        #region PRIVATE FUNCTIONS
         /// <summary>
         /// Function to map from HubRequest to HotelLegsRequest
         /// I didn't use AutoMapper because AutoMapper uses Reflection and is slower than manual mapping
@@ -71,5 +83,6 @@ namespace FDSA.Infraestructure.WebServices
 
             return result;
         }
+        #endregion
     }
 }

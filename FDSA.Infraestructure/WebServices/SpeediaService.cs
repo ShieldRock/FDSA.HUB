@@ -7,19 +7,32 @@ namespace FDSA.Infraestructure.WebServices
 {
     public class SpeediaService : ISpeediaService
     {
+        #region PRIVATE VARIABLES
         private readonly IHotelLegsAPI _hotelApi;
+        #endregion
 
+        #region CONSTRUCTORS
         public SpeediaService(IHotelLegsAPI hotelApi)
         {
             _hotelApi = hotelApi;
         }
+        #endregion
 
+        #region PUBLIC FUNCTIONS
+        /// <summary>
+        /// Function to send data to the WebService
+        /// In this case, the WebService is HotelLegs for testing purposes
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<HubResponse> SearchDataAsync(HubRequest request)
         {
             var data = await _hotelApi.SendAsync(GetRequest(request));
             return GetResponse(data);
         }
+        #endregion
 
+        #region PRIVATE FUNCTIONS
         /// <summary>
         /// Function to map from HubRequest to HotelLegsRequest
         /// I didn't use AutoMapper because AutoMapper uses Reflection and is slower than manual mapping
@@ -65,5 +78,6 @@ namespace FDSA.Infraestructure.WebServices
 
             return result;
         }
+        #endregion
     }
 }

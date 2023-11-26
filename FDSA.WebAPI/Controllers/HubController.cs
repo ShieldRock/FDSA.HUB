@@ -9,9 +9,12 @@ namespace FDSA.WebAPI.Controllers
     [Route("api/[controller]/[action]")]
     public class HubController : ControllerBase
     {
+        #region PRIVATE VARIABLES
         private readonly ILogger<HubController> _logger;
         private readonly IHubService _hubService;
+        #endregion
 
+        #region CONSTRUCTORS
         public HubController(
             ILogger<HubController> logger,
             IHubService hubService
@@ -20,7 +23,9 @@ namespace FDSA.WebAPI.Controllers
             _logger = logger;
             _hubService = hubService;
         }
+        #endregion
 
+        #region PUBLIC FUNCTIONS
         /// <summary>
         /// Function to search
         /// </summary>
@@ -33,7 +38,8 @@ namespace FDSA.WebAPI.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest(string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)));
+                    var errors = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
+                    return BadRequest(errors);
                 }
 
                 _logger.LogInformation($"Request incoming: {JsonSerializer.Serialize(request)}");
@@ -47,5 +53,6 @@ namespace FDSA.WebAPI.Controllers
                 return Problem(ex.Message);
             }
         }
+        #endregion
     }
 }

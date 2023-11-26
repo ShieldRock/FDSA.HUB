@@ -7,19 +7,30 @@ namespace FDSA.WebAPIHotelLegs.Controllers
     [Route("api/[controller]/[action]")]
     public class HotelLegController : ControllerBase
     {
+        #region PRIVATE VARIABLES
         private readonly ILogger<HotelLegController> _logger;
+        #endregion
 
+        #region CONSTRUCTORS
         public HotelLegController(ILogger<HotelLegController> logger)
         {
             _logger = logger;
         }
+        #endregion
 
+        #region PUBLIC FUNCTIONS
         [HttpPost(Name = "Search")]
         public async Task<IActionResult> SearchAsync(HotelLegsRequest request)
         {
             return Ok(await Task.Run(GetResponse));
         }
+        #endregion
 
+        #region PRIVATE FUNCTIONS
+        /// <summary>
+        /// Function to return data
+        /// </summary>
+        /// <returns></returns>
         private static HotelLegsResponse GetResponse()
         {
             return new HotelLegsResponse
@@ -57,5 +68,6 @@ namespace FDSA.WebAPIHotelLegs.Controllers
                 }
             };
         }
+        #endregion
     }
 }
