@@ -1,4 +1,4 @@
-﻿using FDSA.Domain;
+﻿using FDSA.Domain.HUB;
 
 namespace FDSA.Application.Interfaces
 {

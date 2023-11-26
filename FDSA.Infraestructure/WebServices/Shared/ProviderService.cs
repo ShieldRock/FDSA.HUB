@@ -1,5 +1,5 @@
 ﻿using FDSA.Application.Interfaces.WebServices.Shared;
-using FDSA.Domain;
+using FDSA.Domain.HUB;
 
 namespace FDSA.Infraestructure.WebServices.Shared
 {

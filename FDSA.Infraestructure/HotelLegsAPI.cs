@@ -1,6 +1,5 @@
-﻿using FDSA.Application;
-using FDSA.Application.Interfaces;
-using FDSA.Domain;
+﻿using FDSA.Application.Interfaces;
+using FDSA.Domain.HotelLegs;
 using Newtonsoft.Json;
 using System.Text;
 

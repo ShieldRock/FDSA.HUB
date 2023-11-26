@@ -1,4 +1,4 @@
-﻿using FDSA.Domain;
+﻿using FDSA.Domain.HotelLegs;
 
 namespace FDSA.Application.Interfaces
 {

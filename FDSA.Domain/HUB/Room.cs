@@ -1,4 +1,4 @@
-﻿namespace FDSA.Domain
+﻿namespace FDSA.Domain.HUB
 {
     public class Room
     {

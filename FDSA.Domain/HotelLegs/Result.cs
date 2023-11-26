@@ -1,4 +1,4 @@
-﻿namespace FDSA.Domain
+﻿namespace FDSA.Domain.HotelLegs
 {
     public class Result
     {

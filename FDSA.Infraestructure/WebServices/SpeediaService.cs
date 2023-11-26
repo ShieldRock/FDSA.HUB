@@ -1,7 +1,7 @@
-﻿using FDSA.Application;
-using FDSA.Application.Interfaces;
+﻿using FDSA.Application.Interfaces;
 using FDSA.Application.Interfaces.WebServices;
-using FDSA.Domain;
+using FDSA.Domain.HotelLegs;
+using FDSA.Domain.HUB;
 
 namespace FDSA.Infraestructure.WebServices
 {

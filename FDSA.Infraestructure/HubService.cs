@@ -1,7 +1,7 @@
 ﻿using FDSA.Application.Interfaces;
 using FDSA.Application.Interfaces.WebServices;
 using FDSA.Application.Interfaces.WebServices.Shared;
-using FDSA.Domain;
+using FDSA.Domain.HUB;
 using FDSA.Infraestructure.WebServices.Shared;
 using Microsoft.Extensions.DependencyInjection;
 

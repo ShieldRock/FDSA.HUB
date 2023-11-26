@@ -1,5 +1,5 @@
 using FDSA.Application.Interfaces;
-using FDSA.Domain;
+using FDSA.Domain.HUB;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
